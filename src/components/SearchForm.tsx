@@ -9,8 +9,8 @@ import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 
 const popularCities = [
-  "New Delhi", "Mumbai", "Bangalore", "Chennai", "Hyderabad", 
-  "Kolkata", "Ahmedabad", "Pune", "Jaipur", "Lucknow"
+  "Dhaka", "Chittagong", "Khulna", "Rajshahi", "Sylhet", 
+  "Barisal", "Rangpur", "Cox's Bazar", "Comilla", "Mymensingh"
 ];
 
 const SearchForm = () => {
