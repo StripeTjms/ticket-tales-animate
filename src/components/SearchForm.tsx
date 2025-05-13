@@ -7,6 +7,8 @@ import { Calendar as CalendarIcon, Bus, ArrowRight } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'sonner';
 
 const popularCities = [
   "Dhaka", "Chittagong", "Khulna", "Rajshahi", "Sylhet", 
@@ -14,6 +16,7 @@ const popularCities = [
 ];
 
 const SearchForm = () => {
+  const navigate = useNavigate();
   const [fromCity, setFromCity] = useState("");
   const [toCity, setToCity] = useState("");
   const [date, setDate] = useState<Date>();
@@ -22,8 +25,28 @@ const SearchForm = () => {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Check if we have required fields
+    if (!fromCity) {
+      toast.error("Please select a departure city");
+      return;
+    }
+    
+    if (!toCity) {
+      toast.error("Please select a destination city");
+      return;
+    }
+    
+    if (!date) {
+      toast.error("Please select a travel date");
+      return;
+    }
+    
     console.log({ fromCity, toCity, date: date ? format(date, 'yyyy-MM-dd') : '' });
-    // In a real app, we would navigate to search results or dispatch an action
+    
+    // Navigate to routes page with search params
+    navigate(`/routes?from=${fromCity}&to=${toCity}&date=${format(date, 'yyyy-MM-dd')}`);
+    toast.success("Searching for available buses...");
   };
 
   const handleFromCitySelect = (city: string) => {
