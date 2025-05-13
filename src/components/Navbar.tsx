@@ -19,7 +19,9 @@ const Navbar = () => {
           <Link to="/" className="text-gray-600 hover:text-brand-red transition-colors">Home</Link>
           <Link to="/bookings" className="text-gray-600 hover:text-brand-red transition-colors">Bookings</Link>
           <Link to="/routes" className="text-gray-600 hover:text-brand-red transition-colors">Routes</Link>
-          <Link to="/support" className="text-gray-600 hover:text-brand-red transition-colors">Support</Link>
+          <Link to="/operators" className="text-gray-600 hover:text-brand-red transition-colors">Operators</Link>
+          <Link to="/about" className="text-gray-600 hover:text-brand-red transition-colors">About</Link>
+          <Link to="/contact" className="text-gray-600 hover:text-brand-red transition-colors">Contact</Link>
         </nav>
         
         <div className="flex items-center gap-3">
@@ -29,8 +31,8 @@ const Navbar = () => {
             </Link>
           </Button>
           <Button variant="outline" size="sm" className="hidden md:flex gap-2" asChild>
-            <Link to="/account">
-              <User className="h-4 w-4" /> Account
+            <Link to="/profile">
+              <User className="h-4 w-4" /> Profile
             </Link>
           </Button>
           <Button variant="default" size="sm" asChild>

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Bus } from "lucide-react";
 
 const Footer = () => {
@@ -20,20 +21,20 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4">About</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white text-sm">About Us</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white text-sm">Contact Us</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white text-sm">Terms & Conditions</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white text-sm">Privacy Policy</a></li>
+              <li><Link to="/about" className="text-gray-400 hover:text-white text-sm">About Us</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-white text-sm">Contact Us</Link></li>
+              <li><Link to="/terms" className="text-gray-400 hover:text-white text-sm">Terms & Conditions</Link></li>
+              <li><Link to="/privacy" className="text-gray-400 hover:text-white text-sm">Privacy Policy</Link></li>
             </ul>
           </div>
           
           <div>
             <h3 className="font-semibold text-lg mb-4">Info</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white text-sm">FAQ</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white text-sm">Blog</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white text-sm">Bus Operators</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white text-sm">Destinations</a></li>
+              <li><Link to="/faq" className="text-gray-400 hover:text-white text-sm">FAQ</Link></li>
+              <li><Link to="/trips" className="text-gray-400 hover:text-white text-sm">Trip History</Link></li>
+              <li><Link to="/operators" className="text-gray-400 hover:text-white text-sm">Bus Operators</Link></li>
+              <li><Link to="/payment-methods" className="text-gray-400 hover:text-white text-sm">Payment Methods</Link></li>
             </ul>
           </div>
           
